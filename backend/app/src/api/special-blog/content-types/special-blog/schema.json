@@ -1,0 +1,40 @@
+{
+  "kind": "collectionType",
+  "collectionName": "special_blogs",
+  "info": {
+    "singularName": "special-blog",
+    "pluralName": "special-blogs",
+    "displayName": "Special Blog"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "thumbnail": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "detail": {
+      "type": "blocks"
+    },
+    "author": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::author.author",
+      "inversedBy": "special_blogs"
+    }
+  }
+}
